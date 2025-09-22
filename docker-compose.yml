@@ -1,22 +1,17 @@
-version: "3.8"
-
 services:
   mongo:
     image: mongo:6.0
     container_name: ship-mongo
-    
     volumes:
       - mongo-data:/data/db
 
-  
   backend:
     build: ./AI-ShipPlanner_MERN_Backend
     env_file:
-    - ./AI-ShipPlanner_MERN_Backend/.env
+      - ./AI-ShipPlanner_MERN_Backend/.env
     container_name: ship-backend
-    expose:                       
+    expose:
       - "8000"
-    
     depends_on:
       - mongo
       - ml
@@ -26,28 +21,9 @@ services:
     env_file:
       - ./ai-ship-planner/.env
     container_name: ship-ml
-    
     depends_on:
-      - redis   
-
-
-  nginx:
-    image: nginx:latest
-    container_name: ship-nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - /etc/letsencrypt:/etc/letsencrypt
-     
-    depends_on:
-      - backend
+      - redis
 
   redis:
     image: redis:7.0
     container_name: ship-redis
-    
-
-volumes:
-  mongo-data:
