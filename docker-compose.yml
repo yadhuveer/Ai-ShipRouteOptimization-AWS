@@ -11,7 +11,7 @@ services:
       - ./AI-ShipPlanner_MERN_Backend/.env
     container_name: ship-backend
     expose:
-      - "8000"
+      - "8000:8000"
     depends_on:
       - mongo
       - ml
