@@ -99,15 +99,15 @@ export default async function ResultPage({
 import React from "react";
 import { Result } from "../../Features/Result";
 
-interface ResultPageProps {
+/*interface ResultPageProps {
   searchParams: {
     source?: string;
     destination?: string;
     cargo?: string;
   };
-}
+}*/
 
-export default function ResultPage({ searchParams }: ResultPageProps) {
+export default function ResultPage() {
   return <Result  />;
 }
 
