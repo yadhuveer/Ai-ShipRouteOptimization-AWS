@@ -10,7 +10,7 @@ services:
     env_file:
       - ./AI-ShipPlanner_MERN_Backend/.env
     container_name: ship-backend
-    expose:
+    ports:
       - "8000:8000"
     depends_on:
       - mongo
