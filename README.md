@@ -93,9 +93,7 @@ text
 <br>
 
  📈 Future Improvements    
-   ✅ Integrate Marine Traffic API for real-time shipping traffic      
-   ✅ Dockerize services for production-ready setup      
-   ✅ Deploy full system to AWS      
+   ✅ Integrate Marine Traffic API for real-time shipping traffic            
 
 <br>
 
